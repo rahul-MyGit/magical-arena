@@ -8,7 +8,7 @@ export class Arena {
     constructor(){
         this.playerId = 0;
         this.players = new Map();
-        console.log("WELCOME TO DEATH-MATH ARENA !!!");
+        console.log("WELCOME TO DEATH-MATCH ARENA !!!");
     }
 
     //TODO: addPlayer , deletePlayer, dislayPlayer, Battle.
@@ -22,7 +22,7 @@ export class Arena {
         const newPlayer = new Player(idAssign, name, health, defence, attack);
         this.players.set(idAssign, newPlayer);
 
-        console.log([...this.players.entries()]);
+        // console.log([...this.players.entries()]);
         return;
     }
 
@@ -33,5 +33,19 @@ export class Arena {
             console.log(`The player id ${id} doesn't exists`);
             
         }
+        console.log([...this.players.entries()]);
     }
+
+    disPlayAllPlayers() {
+        if(this.players.size > 0){
+            for(const [id, player] of this.players){
+                const {name, health, defence, attack} = player;
+                console.log(`|\t${id}\t|\t${name}\t|\t${health}\t|\t${defence}\t|\t${attack}\t|`);
+            }
+        }else{
+            console.log("NO PLAYER EXISTS IN THE ARENA !!! COMEON REGISTER");
+        }
+        console.log('\n');
+    }
+
 }

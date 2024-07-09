@@ -28,7 +28,7 @@ const startBattleHandler = async () => {
 }
 
 const displayAvailableOptions = () => {
-    console.log("Options: \n\t1> Adding new Player\n\t2> Start BATTLE\n\t3> Stop the game\n");
+    console.log("Options: \n\t1> Display All Players\n\t2> Adding new Player\n\t3> Start BATTLE\n\t4> Stop the game\n");
     return;
 }
 
@@ -37,17 +37,21 @@ const mainArenaStart = async() => {
 
 
     while(true) {
+        arena.disPlayAllPlayers();
         displayAvailableOptions();
         const response = await InputNumberFromUser("Enter your choice (INTEGER): ");
 
         switch (response) {
             case 1:
-                await addPlayerHandler(arena);
+                arena.disPlayAllPlayers();
                 break;
             case 2:
-                await startBattleHandler();
+                await addPlayerHandler(arena);
                 break;
             case 3:
+                await startBattleHandler();
+                break;
+            case 4:
                 console.log("Exiting the game... ");
                 process.exit(0);
             default:
@@ -55,7 +59,7 @@ const mainArenaStart = async() => {
                 break;
         }
 
-        console.log("\n____________________________________________________________________________________________________________________________________________\n\n");
+        console.log("\n__________________________________________________________________________________________________________________________________________________________________________\n\n");
         
     }
 };
