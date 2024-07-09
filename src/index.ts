@@ -17,14 +17,15 @@ const addPlayerHandler = async (arena : Arena) => {
     return;
 }
 
-const startBattleHandler = async () => {
-    if(1 < 2) {
+const startBattleHandler = async (arena : Arena) => {
+    if(arena.getPlayerCount() < 2) {
         console.log("There should be at least 2 Players in the Arena to start the BATTLE. \nPlease add more players.\n");
         return;
     }
 
     const firstId = await InputNumberFromUser("Enter the first player ID: ");
     const secondId = await InputNumberFromUser("Enter the second player ID: ");
+    arena.magicalBattle(firstId, secondId);
 }
 
 const displayAvailableOptions = () => {
@@ -33,7 +34,8 @@ const displayAvailableOptions = () => {
 }
 
 const deletePlayerHandler = async (arena : Arena) => {
-    const id = await InputNumberFromUser("Enter the player ID to be DELETED: ");
+    const id = await InputNumberFromUser("Enter the player ID to be DELETED OR (-1) TO GO BACK: ");
+    if(id === -1) return;
     arena.deletePlayerById(id);
     return
 }
@@ -58,7 +60,7 @@ const mainArenaStart = async() => {
                 await deletePlayerHandler(arena);
                 break;
             case 4:
-                await startBattleHandler();
+                await startBattleHandler(arena);
                 break;
             case 5:
                 console.log("Exiting the game... ");
