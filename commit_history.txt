@@ -1,0 +1,11 @@
+5417ce82a54072b59152e745b0bdf028a70714a4 - Rahul, 78 seconds ago : Comleted
+285df5ae5746dcd80e6b552db314351c49650a0b - Rahul, 17 minutes ago : Fixes bug and write test code
+86e800948458b2fb274aed38cae42c25023a1d8f - Rahul, 6 hours ago : Added magical-battlefield
+89502a190c250b06b186ffdd5f0c7a108b12eb8b - Rahul, 7 hours ago : Added deletePlayerById functionality
+5bf44335a97382d3093cbc097ab2a6df52e2f13c - Rahul, 8 hours ago : Completed display-all-player functionality
+1d6fb4a60c9c0e43a1873dcaaf91883ecb44346b - Rahul, 8 hours ago : Completed AddPlayer functionality
+77ab3e3926d940db66f61868d92be1cc7d6743b9 - Rahul, 8 hours ago : Added main function and all functionality
+9e5cae33362c4a4f2ca137640ac2d1dee266aedd - Rahul, 20 hours ago : Added Layout for Arena and main class
+2f0af950d328ac09f881f1a676067a16a08458b3 - Rahul, 20 hours ago : Added Player class
+b22ce314b4e757ef0f7919d5d3bab5633749efab - Rahul, 20 hours ago : Added Input-Name and Input-Number from user function
+5dd33f5c16178e86149dd0a16735898543ce64d5 - Rahul, 21 hours ago : Initialize file structure
