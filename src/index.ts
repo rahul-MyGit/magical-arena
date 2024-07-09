@@ -11,10 +11,10 @@ const enterPlayerDetails = async () => {
     return {name, health, attack, defence};
 }
 
-const addPlayerHandler = async () => {
+const addPlayerHandler = async (arena : Arena) => {
     const {name, health, attack, defence} = await enterPlayerDetails();
-    console.log(name, health, attack, defence);
-    
+    arena.addPlayer(name, health,defence, attack);
+    return;
 }
 
 const startBattleHandler = async () => {
@@ -33,13 +33,16 @@ const displayAvailableOptions = () => {
 }
 
 const mainArenaStart = async() => {
+    const arena = new Arena();
+
+
     while(true) {
         displayAvailableOptions();
         const response = await InputNumberFromUser("Enter your choice (INTEGER): ");
 
         switch (response) {
             case 1:
-                await addPlayerHandler();
+                await addPlayerHandler(arena);
                 break;
             case 2:
                 await startBattleHandler();
