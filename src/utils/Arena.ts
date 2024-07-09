@@ -43,9 +43,19 @@ export class Arena {
                 console.log(`|\t${id}\t|\t${name}\t|\t${health}\t|\t${defence}\t|\t${attack}\t|`);
             }
         }else{
-            console.log("NO PLAYER EXISTS IN THE ARENA !!! COMEON REGISTER");
+            console.log("NO PLAYER EXISTS IN THE ARENA !!! COMEON REGISTER noobs");
         }
         console.log('\n');
+    }
+
+    deletePlayerById(id: number){
+        if(this.players.has(id)){
+            console.log(`PLAYER WITH ID: ${id} HAS BEEN DELETED`);
+            this.players.delete(id);
+        }else{
+            console.log(`NO PLAYER WITH ID: ${id} EXISTS IN ARENA`);
+            
+        }
     }
 
 }

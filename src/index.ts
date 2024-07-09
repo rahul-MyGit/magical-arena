@@ -28,8 +28,14 @@ const startBattleHandler = async () => {
 }
 
 const displayAvailableOptions = () => {
-    console.log("Options: \n\t1> Display All Players\n\t2> Adding new Player\n\t3> Start BATTLE\n\t4> Stop the game\n");
+    console.log("Options: \n\t1> Display All Players\n\t2> Adding new Player\n\t3> DELETE Player By ID\n\t4> Start BATTLE\n\t5> Stop the game\n");
     return;
+}
+
+const deletePlayerHandler = async (arena : Arena) => {
+    const id = await InputNumberFromUser("Enter the player ID to be DELETED: ");
+    arena.deletePlayerById(id);
+    return
 }
 
 const mainArenaStart = async() => {
@@ -37,7 +43,7 @@ const mainArenaStart = async() => {
 
 
     while(true) {
-        arena.disPlayAllPlayers();
+        
         displayAvailableOptions();
         const response = await InputNumberFromUser("Enter your choice (INTEGER): ");
 
@@ -49,9 +55,12 @@ const mainArenaStart = async() => {
                 await addPlayerHandler(arena);
                 break;
             case 3:
-                await startBattleHandler();
+                await deletePlayerHandler(arena);
                 break;
             case 4:
+                await startBattleHandler();
+                break;
+            case 5:
                 console.log("Exiting the game... ");
                 process.exit(0);
             default:
