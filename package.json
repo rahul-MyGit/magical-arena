@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
@@ -11,7 +11,8 @@
   "description": "",
   "devDependencies": {
     "@jest/globals": "^29.7.0",
-    "ts-jest": "^29.2.0"
+    "ts-jest": "^29.2.0",
+    "vitest": "^2.0.1"
   },
   "dependencies": {
     "ejs": "^3.1.10"

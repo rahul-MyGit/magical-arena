@@ -34,10 +34,10 @@ const displayAvailableOptions = () => {
 }
 
 const deletePlayerHandler = async (arena : Arena) => {
-    const id = await InputNumberFromUser("Enter the player ID to be DELETED OR (-1) TO GO BACK: ");
+    const id = await InputNumberFromUser("Enter the player ID to be DELETED OR ENTER (-1) TO GO BACK: ");
     if(id === -1) return;
     arena.deletePlayerById(id);
-    return
+    return;
 }
 
 const mainArenaStart = async() => {

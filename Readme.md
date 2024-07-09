@@ -6,7 +6,7 @@
 
 ## Packages used
 
-    1. jest : for writing unit tests for the application.
+    1. vitest : for writing unit tests for the application.
     2. readline : Node.js's module for reading user input.
 
 ## Steps to run the program

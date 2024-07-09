@@ -31,14 +31,16 @@ export class Arena {
         if(this.players.has(id)){
             console.log(`PLAYER WITH ID: ${id} HAS BEEN DELETED`);
             this.players.delete(id);
+            return id;
         }else{
             console.log(`NO PLAYER WITH ID: ${id} EXISTS IN ARENA`);  
         }
-        
+        return -1;
     }
 
     disPlayAllPlayers() {
         if(this.players.size > 0){
+            console.log(`|\tid\t|\tname\t|\thealth\t|\tdefence\t|\tattack\t|`);
             for(const [id, player] of this.players){
                 const {name, health, defence, attack} = player;
                 console.log(`|\t${id}\t|\t${name}\t|\t${health}\t|\t${defence}\t|\t${attack}\t|`);
@@ -51,6 +53,10 @@ export class Arena {
 
     getPlayerCount (): number {
         return this.players.size;
+    }
+
+    isPresent (id: number) {
+        return this.players.has(id);
     }
 
     magicalBattle (firstId: number, secondId: number) {
@@ -70,6 +76,9 @@ export class Arena {
         
         if(defender && attacker &&  defender.health <= attacker.health){
             [attacker, defender] = [defender, attacker];
+        }
+
+        if(defender && attacker){
             console.log("\n_____________WAR STARTED _________________\n");
             
             console.log(`\n____________${attacker.name} v/S ${defender.name}____________\n`);
@@ -82,7 +91,7 @@ export class Arena {
 
                 console.log(`Attacker ${attacker.name} attack to ${defender.name} with power of: ${totalAttackerPowerToAttack} \n`);
 
-                if(totalAttackerPowerToAttack < totalDefenderPowerToDefend){
+                if(totalAttackerPowerToAttack <= totalDefenderPowerToDefend){
                     console.log(`OMG: ${defender.name} has deflected his attack successfully \n`);
                 }else{
                     const damageTaken = totalAttackerPowerToAttack - totalDefenderPowerToDefend;
