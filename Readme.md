@@ -25,6 +25,9 @@
         `$ tsc -b`
         `node dist/index.js`
 
+    4. [ALERT] If Not worked then directly run below cmd as node_modules and dist folder is provded
+        `node dist/index.js`
+
 ## Features included are
 
     1. You can View All Players in Arena

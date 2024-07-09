@@ -4,7 +4,7 @@ import { rollDice } from "../utils/Common";
 
 describe('Checking rollDice function', () => {
     it('should return a number between 1 and 6', ()=>{
-        expect(rollDice()).toBeGreaterThan(1);
+        expect(rollDice()).toBeGreaterThanOrEqual(1);
         expect(rollDice()).toBeLessThan(7);
     });
 
