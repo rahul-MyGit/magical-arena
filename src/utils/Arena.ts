@@ -29,7 +29,8 @@ export class Arena {
 
     deletePlayerById(id: number){
         if(this.players.has(id)){
-            console.log(`PLAYER WITH ID: ${id} HAS BEEN DELETED`);
+            const playerDetails = this.players.get(id);
+            console.log(`PLAYER WITH NAME: ${playerDetails?.name} and ID: ${id} HAS BEEN DELETED`);
             this.players.delete(id);
             return id;
         }else{
@@ -112,7 +113,7 @@ export class Arena {
                 }
             }
 
-            console.log(`${attacker.name} has emerged VICTORIOUS!!! \n`);
+            console.log(` ##########  ${attacker.name} has emerged VICTORIOUS!!!  ###########\n`);
             this.deletePlayerById(defender.id);
 
             return {winner: attacker.id, loser: defender.id}

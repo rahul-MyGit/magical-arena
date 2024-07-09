@@ -19,10 +19,18 @@
 
         `$ npm run test`
     
-    3. To run the program,
+    3. To compile and run the program,
 
 
         `$ tsc -b`
         `node dist/index.js`
+
+## Features included are
+
+    1. You can View All Players in Arena
+    2. You can Add Players into Arena
+    3. You can delete Existing Players in Arena
+    4. You can start the WAR (After having minimum 2 players inside Arena).
+    5. You can Exit the arena
 
 Follow the CLI to interact with the arena.
